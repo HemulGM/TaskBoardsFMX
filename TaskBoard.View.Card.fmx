@@ -1,0 +1,115 @@
+object FrameCard: TFrameCard
+  Align = Top
+  DragMode = dmAutomatic
+  EnableDragHighlight = False
+  Size.Width = 273.000000000000000000
+  Size.Height = 64.000000000000000000
+  Size.PlatformDefault = False
+  OnDragEnter = FrameDragEnter
+  OnDragLeave = FrameDragLeave
+  OnDragOver = FrameDragOver
+  OnDragDrop = FrameDragDrop
+  OnDragEnd = FrameDragEnd
+  OnResize = FrameResize
+  OnResized = FrameResize
+  object RectangleContent: TRectangle
+    Align = Contents
+    Fill.Color = claWhite
+    HitTest = False
+    Padding.Left = 4.000000000000000000
+    Padding.Top = 4.000000000000000000
+    Padding.Right = 4.000000000000000000
+    Padding.Bottom = 4.000000000000000000
+    Size.Width = 273.000000000000000000
+    Size.Height = 64.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    Stroke.Thickness = 2.000000000000000000
+    XRadius = 3.000000000000000000
+    YRadius = 3.000000000000000000
+    object MemoText: TMemo
+      Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+      DataDetectorTypes = []
+      Lines.Strings = (
+        
+          #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077' '#1074#1088#1077#1084#1077#1085#1080'. '#1053#1077' '#1086#1090#1086#1073#1088#1072#1078#1072#1077#1090#1089#1103' '#1079#1072#1076#1072#1095#1072', '#1077#1089#1083#1080' '#1074#1099#1073#1088#1072#1085' '#1092#1080#1083#1100 +
+          #1090#1088' '#1073#1077#1079' '#1101#1090#1086#1081' '#1079#1072#1076#1072#1095#1080)
+      ReadOnly = True
+      ShowScrollBars = False
+      StyledSettings = []
+      TextSettings.Font.Size = 14.000000000000000000
+      TextSettings.FontColor = xFF172B4D
+      TextSettings.WordWrap = True
+      Align = Top
+      HitTest = False
+      Position.X = 4.000000000000000000
+      Position.Y = 4.000000000000000000
+      Size.Width = 265.000000000000000000
+      Size.Height = 56.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'memostyle_clear'
+      TabOrder = 0
+      OnViewportPositionChange = MemoTextViewportPositionChange
+      Viewport.Width = 265.000000000000000000
+      Viewport.Height = 56.000000000000000000
+    end
+    object Rectangle1: TRectangle
+      Align = Contents
+      Corners = [BottomLeft, BottomRight]
+      Fill.Kind = None
+      HitTest = False
+      Sides = [Bottom]
+      Size.Width = 273.000000000000000000
+      Size.Height = 64.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = xFFB7B7B7
+      XRadius = 3.000000000000000000
+      YRadius = 3.000000000000000000
+    end
+  end
+  object LayoutAction: TLayout
+    Align = Client
+    Opacity = 0.000000000000000000
+    Margins.Left = 3.000000000000000000
+    Margins.Top = 3.000000000000000000
+    Margins.Right = 3.000000000000000000
+    Margins.Bottom = 3.000000000000000000
+    Size.Width = 267.000000000000000000
+    Size.Height = 58.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    object LayoutEdit: TLayout
+      Align = Top
+      Size.Width = 267.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Button1: TButton
+        Align = Right
+        Position.X = 243.000000000000000000
+        Size.Width = 24.000000000000000000
+        Size.Height = 24.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'button_style_edit_card'
+        TabOrder = 0
+        Text = 'Button1'
+      end
+    end
+  end
+  object ColorAnimationOver: TColorAnimation
+    Duration = 0.001000000047497451
+    PropertyName = 'RectangleContent.Fill.Color'
+    StartValue = claWhite
+    StopValue = xFFABB8D2
+    Trigger = 'IsMouseOver=true'
+    TriggerInverse = 'IsMouseOver=false'
+  end
+  object FloatAnimationActions: TFloatAnimation
+    Duration = 0.001000000047497451
+    PropertyName = 'LayoutAction.Opacity'
+    StartValue = 0.000000000000000000
+    StopValue = 1.000000000000000000
+    Trigger = 'IsMouseOver=true'
+    TriggerInverse = 'IsMouseOver=false'
+  end
+end

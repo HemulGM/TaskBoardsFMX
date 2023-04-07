@@ -1,0 +1,132 @@
+object FrameColumn: TFrameColumn
+  EnableDragHighlight = False
+  Size.Width = 437.000000000000000000
+  Size.Height = 796.000000000000000000
+  Size.PlatformDefault = False
+  OnDragLeave = VertScrollBoxItemsDragLeave
+  OnDragOver = VertScrollBoxItemsDragOver
+  OnDragDrop = VertScrollBoxItemsDragDrop
+  OnDragEnd = VertScrollBoxItemsDragEnd
+  OnResize = FrameResize
+  OnResized = FrameResize
+  object LayoutContent: TLayout
+    Align = Top
+    DragMode = dmAutomatic
+    EnableDragHighlight = False
+    HitTest = True
+    Padding.Left = 8.000000000000000000
+    Padding.Top = 8.000000000000000000
+    Padding.Right = 8.000000000000000000
+    Padding.Bottom = 8.000000000000000000
+    Size.Width = 437.000000000000000000
+    Size.Height = 601.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    OnDragLeave = VertScrollBoxItemsDragLeave
+    OnDragOver = VertScrollBoxItemsDragOver
+    OnDragDrop = VertScrollBoxItemsDragDrop
+    OnDragEnd = VertScrollBoxItemsDragEnd
+    object RectangleBG: TRectangle
+      Align = Contents
+      Fill.Color = xFFEBECF0
+      HitTest = False
+      Size.Width = 437.000000000000000000
+      Size.Height = 601.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 4.000000000000000000
+      YRadius = 4.000000000000000000
+    end
+    object VertScrollBoxItems: TVertScrollBox
+      Align = Client
+      EnableDragHighlight = False
+      Size.Width = 421.000000000000000000
+      Size.Height = 521.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      OnDragLeave = VertScrollBoxItemsDragLeave
+      OnDragOver = VertScrollBoxItemsDragOver
+      OnDragDrop = VertScrollBoxItemsDragDrop
+      OnDragEnd = VertScrollBoxItemsDragEnd
+      OnCalcContentBounds = VertScrollBoxItemsCalcContentBounds
+      Viewport.Width = 421.000000000000000000
+      Viewport.Height = 521.000000000000000000
+      object LayoutDropCard: TLayout
+        Align = Top
+        Margins.Bottom = 6.000000000000000000
+        Size.Width = 421.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Visible = False
+        TabOrder = 0
+        object Rectangle1: TRectangle
+          Align = Contents
+          Fill.Color = x46000000
+          HitTest = False
+          Padding.Left = 4.000000000000000000
+          Padding.Top = 4.000000000000000000
+          Padding.Right = 4.000000000000000000
+          Padding.Bottom = 4.000000000000000000
+          Size.Width = 421.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Kind = None
+          XRadius = 3.000000000000000000
+          YRadius = 3.000000000000000000
+        end
+      end
+    end
+    object LayoutHead: TLayout
+      Align = Top
+      Position.X = 8.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 421.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object LabelTitle: TLabel
+        Align = Client
+        StyledSettings = [Size, Style, FontColor]
+        Size.Width = 421.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'labeltitle_style'
+        TextSettings.Font.Family = 'Roboto'
+        Text = 'Title'
+        TabOrder = 0
+      end
+    end
+    object LayoutFooter: TLayout
+      Align = Bottom
+      Padding.Top = 4.000000000000000000
+      Position.X = 8.000000000000000000
+      Position.Y = 561.000000000000000000
+      Size.Width = 421.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 3
+      object ButtonAdd: TButton
+        Align = Client
+        EnableDragHighlight = False
+        Size.Width = 421.000000000000000000
+        Size.Height = 28.000000000000000000
+        Size.PlatformDefault = False
+        StyleLookup = 'button_style_add_card'
+        TabOrder = 0
+        Text = #1044#1086#1073#1072#1074#1080#1090#1100' '#1082#1072#1088#1090#1086#1095#1082#1091
+        TextSettings.HorzAlign = Leading
+        OnDragLeave = VertScrollBoxItemsDragLeave
+        OnDragOver = VertScrollBoxItemsDragOver
+        OnDragDrop = VertScrollBoxItemsDragDrop
+        OnDragEnd = VertScrollBoxItemsDragEnd
+      end
+    end
+  end
+  object TimerScroll: TTimer
+    Enabled = False
+    Interval = 5
+    OnTimer = TimerScrollTimer
+    Left = 208
+    Top = 384
+  end
+end
