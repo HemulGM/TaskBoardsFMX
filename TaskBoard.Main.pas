@@ -31,8 +31,8 @@ type
     FrameCard14: TFrameCard;
     FrameCard15: TFrameCard;
     FrameCard16: TFrameCard;
-    Layout1: TLayout;
-    Rectangle1: TRectangle;
+    LayoutHeader: TLayout;
+    RectangleHeaderBG: TRectangle;
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
@@ -45,11 +45,18 @@ var
 
 implementation
 
+uses
+  DarkModeApi.FMX;
+
 {$R *.fmx}
 
 procedure TFormMain.FormCreate(Sender: TObject);
 begin
+  {$IFDEF MSWINDOWS}
+  SetWindowColorModeAsSystem;
+  {$ENDIF}
   ScrollBoxItems.AniCalculations.Animation := True;
 end;
 
 end.
+

@@ -5,7 +5,11 @@ uses
   FMX.Forms,
   TaskBoard.Main in 'TaskBoard.Main.pas' {FormMain},
   TaskBoard.View.Column in 'TaskBoard.View.Column.pas' {FrameColumn: TFrame},
-  TaskBoard.View.Card in 'TaskBoard.View.Card.pas' {FrameCard: TFrame};
+  TaskBoard.View.Card in 'TaskBoard.View.Card.pas' {FrameCard: TFrame},
+  DarkModeApi.Consts in 'WindowDarkMode\DarkModeApi.Consts.pas',
+  DarkModeApi.FMX in 'WindowDarkMode\DarkModeApi.FMX.pas',
+  DarkModeApi in 'WindowDarkMode\DarkModeApi.pas',
+  DarkModeApi.Types in 'WindowDarkMode\DarkModeApi.Types.pas';
 
 {$R *.res}
 
