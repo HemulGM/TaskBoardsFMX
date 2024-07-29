@@ -163,7 +163,7 @@ end;
 
 procedure TFrameColumn.TimerScrollTimer(Sender: TObject);
 begin
-  var MPos := VertScrollBoxItems.AbsoluteToLocal(Application.MainForm.ScreenToClient(Screen.MousePos));
+  var MPos := VertScrollBoxItems.ScreenToLocal(Screen.MousePos);
   if MPos.Y > VertScrollBoxItems.Height - 40 then
   begin
     VertScrollBoxItems.ViewportPosition := VertScrollBoxItems.ViewportPosition + TPointF.Create(0, 5);
@@ -173,7 +173,21 @@ begin
     VertScrollBoxItems.ViewportPosition := VertScrollBoxItems.ViewportPosition + TPointF.Create(0, -5);
   end
   else
-    StopScroll;
+  begin
+    MPos := ParentControl.ScreenToLocal(Screen.MousePos);
+    if MPos.X > ParentControl.Height - 40 then
+    begin
+      if ParentControl is TScrollBox then
+        TScrollBox(ParentControl).AniCalculations.ViewportPosition := TScrollBox(ParentControl).AniCalculations.ViewportPosition + TPointF.Create(5, 0);
+    end
+    else if MPos.X < 40 then
+    begin
+      if ParentControl is TScrollBox then
+        TScrollBox(ParentControl).AniCalculations.ViewportPosition := TScrollBox(ParentControl).AniCalculations.ViewportPosition + TPointF.Create(-5, 0);
+    end
+    else
+      StopScroll;
+  end;
 end;
 
 procedure TFrameColumn.CheckScroll;

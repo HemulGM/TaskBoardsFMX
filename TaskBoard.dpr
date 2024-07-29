@@ -9,7 +9,8 @@ uses
   DarkModeApi.Consts in 'WindowDarkMode\DarkModeApi.Consts.pas',
   DarkModeApi.FMX in 'WindowDarkMode\DarkModeApi.FMX.pas',
   DarkModeApi in 'WindowDarkMode\DarkModeApi.pas',
-  DarkModeApi.Types in 'WindowDarkMode\DarkModeApi.Types.pas';
+  DarkModeApi.Types in 'WindowDarkMode\DarkModeApi.Types.pas',
+  HGM.FMX.StackAnimate in 'StackAnimate\HGM.FMX.StackAnimate.pas';
 
 {$R *.res}
 

@@ -1,3 +1,6 @@
 [submodule "WindowDarkMode"]
 	path = WindowDarkMode
 	url = https://github.com/HemulGM/WindowDarkMode
+[submodule "StackAnimate"]
+	path = StackAnimate
+	url = https://github.com/HemulGM/StackAnimate

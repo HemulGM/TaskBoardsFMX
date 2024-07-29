@@ -11,7 +11,6 @@ object FrameColumn: TFrameColumn
   OnResized = FrameResize
   object LayoutContent: TLayout
     Align = Top
-    DragMode = dmAutomatic
     EnableDragHighlight = False
     HitTest = True
     Padding.Left = 8.000000000000000000
